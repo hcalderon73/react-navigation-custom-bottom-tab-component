@@ -36,7 +36,27 @@ export interface OverwriteProps {
 interface TabBarComponentProps {
   duration: number;
   tabBarHeight: number;
-  allowFontScaling?: boolean;
+  allowFontScaling?: boolean;interface TabBarComponentProps {
+    duration: number;
+    tabBarHeight: number;
+    allowFontScaling?: boolean;
+    defaultFlexValue: number;
+    activeFlexValue: number;
+    navigation: {
+        state: NavigationState;
+    };
+    onTabPress: ({ route }: {
+        route: any;
+    }) => void;
+    renderIcon?: any;
+    setTestID?: (props: {
+        route: any;
+    }) => string;
+    getLabelText: (props: {
+        route: any;
+    }) => any;
+    testID?: string;
+}
   defaultFlexValue: number;
   activeFlexValue: number;
   navigation: {
@@ -45,6 +65,7 @@ interface TabBarComponentProps {
   onTabPress: ({ route }: { route: any }) => void;
   renderIcon?: any;
   getLabelText: (props: { route: any }) => any;
+  testID?: string;
 }
 
 type Props = OverwriteProps & TabBarComponentProps;
